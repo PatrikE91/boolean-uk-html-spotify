@@ -5,7 +5,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    
 }
 li{
     list-style: none;
@@ -30,96 +29,6 @@ li{
     box-shadow: inset 0 0 6px #5f5775;
 }
 
-/* LEFT BAR */
-
-.left-bar{
-    grid-area: left-bar;
-    display: grid;
-    grid-template-rows: 50px 100px 220px 1fr 45px;
-    background-color: black;
-}
-.logo{
-    align-self: center;
-    margin-left: 15px;
-    margin-top: 15px;
-}
-.spotify-logo{
-    height: 35px;
-}
-.home-logo, .search-logo, .library-logo{
-    height: 20px;
-}
-nav{
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 20px 1fr;
-    align-self: center;
-    margin-top: 20px;
-    margin-left: 15px;
-    font-size: 13px;
-}
-nav p, .new-play p, .install p{
-    align-self: center;
-    margin-left: 5px;
-    color: var(--grey);
-}
-.playlist{
-    margin-left: 15px;
-}
-.playlist p, .install p{
-    font-size: 13px;
-    
-}
-.playlist-title, .profile p, .home{
-    color: white;
-}
-.playlist li{
-    margin-top: 8px;
-    color: var(--grey);
-}
-.plus{
-    height: 30px;
-}
-.new-play{
-    display: grid;
-    grid-template-columns: 30px 1fr;
-    align-self: center;
-    margin-top: 5px;
-}
-
-.left-bar ul{
-    font-size: 13px;
-}
-.install{
-    display: grid;
-    grid-template-columns: 15px 1fr;
-    align-self: end;
-    margin-top: 5px;
-    margin-left: 15px;
-    padding-bottom: 5px;
-}
-.download-logo{
-    height: 14px;
-}
-.profile{
-    display: grid;
-    grid-template-columns: 30px 1fr;
-    align-self: end;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 15px;
-    margin-right: 15px;
-    border-top: solid 1px black;
-}
-.profile-pic{
-    border-radius: 50%;
-}
-
-.small-logo{
-    display: none;
-}
-
-
 /* MAIN */
 
 .main{
@@ -127,12 +36,18 @@ nav p, .new-play p, .install p{
     grid-area: main;
     overflow: auto;
     display: grid;
-    grid-template-rows: 80px 30px minmax(200px, 1fr) 200px 200px;
+    grid-template-rows: 60px 60px 60px auto 90px 200px 90px 200px;
 }
 header{
+    display: grid;
+    justify-items: end;
+    align-items: center;
+    background-color: #0a0b13;
+}
+header p{
+    width: 110px;
     color: white;
-    text-align: end;
-    justify-self: end;
+    place-self: end;
     align-self: center;
     margin-right: 80px;
     border: 1px solid white;
@@ -141,14 +56,25 @@ header{
 }
 .recent {
     display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: repeat(7, 1fr);
-    min-width: 90px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 190px));
+    gap: 5px
 }
 .recent div{
-    border: solid 1px white;
+    height: 230px;
+    margin-left: 20px;
 }
-
+.recent h3, .created-playlist h3, .pop-playlist h3{
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 7px;
+}
+.recent p{
+    color: var(--grey);
+    font-size: 10px;
+    text-align: center;
+    margin-top: 5px;
+}
 .main ul{
     list-style: none;
     text-align: end;
@@ -159,73 +85,51 @@ header{
     margin-right: 10px;
     font-variant: small-caps;
 }
-
-
-
-
-
-
-
-
-/* FOOTER  */
-
-.footer{
-    grid-area: footer;
-    background-color: #282828;
+.main li:hover{
+    border-bottom: solid 2px #adff2e;
+    
+}
+.main h2{
+    color: white;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.create-for{
+    margin-top: 10px;
+}
+.create-for p{
+    margin-left: 20px;
+    margin-top: 10px;
+    color: var(--grey);
+}
+.created-playlist{
+    display: grid;
+    grid-template-columns: repeat(2, 190px);
+}
+.created-playlist div{
+    gap: 5px;
+    margin-left: 20px;
+}
+.pop-artist{
+    margin-top: 10px;
+}
+.pop-artist p{
+    margin-left: 20px;
+    margin-top: 10px;
+    color: var(--grey);
+}
+.pop-playlist{
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+}
+.pop-playlist div{
+    gap: 5px;
+    margin-left: 20px;
+}
+.pop-playlist img{
+    border-radius: 50%;
+    margin-left: 15px;
 }
 
 
-/* MEDIA */
 
-@media screen and (max-width: 500px) {
-    .left-bar p, .playlist{
-        display: none;
-    }
-    .container{
-        height: 100vh;
-        width: 100vw;
-        display: grid;
-        grid-template: 
-        "left-bar main" 1fr
-        "footer footer" 80px /
-        35px 1fr;
-    }
-    .left-bar{
-        grid-area: left-bar;
-        display: grid;
-        grid-template-rows: 30px auto 1fr 35px;
-        grid-template-columns: 35px;
-       
-        background-color: black;
-    }
-    nav{
-        display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 5px;
-        margin-left: 0px;
-        margin-bottom: 5px;
-        font-size: 13px;
-    }
-    .logo{
-        align-self: center;
-        margin-left: 8px;
-        margin-top: 15px;
-    }
-    .small-logo{
-        display: block;
-    }
-    .logo svg{
-        display: none;
-    }
-    .install{
-        display: grid;
-        grid-template-columns: auto;
-        margin-left: 11px;
-    }
-    .profile{
-       margin-left: 9px;
-       
-    }
-}

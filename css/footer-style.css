@@ -1,0 +1,147 @@
+:root{
+    --grey: #717171;
+}
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 7px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 7px;
+    width: 15px;
+    border-radius: 10px;
+    background: var(--grey);
+  }
+.footer{
+    grid-area: footer;
+    background-color: #282828;
+    display: grid;
+    grid-template:
+    'song play volume' 1fr
+    'song time volume' 1fr /
+    minmax(70px, 200px) minmax(200px, 1fr) minmax(70px, 250px);
+}
+.song{
+    grid-area: song;
+    display: grid;
+    grid-template-columns: 50px minmax(50px, 1fr) 50px;
+    align-content: center; 
+    margin-left: 15px;
+}
+.song--title{
+    margin-top: 5px;
+}
+.song--title h4{
+    color: white;
+    font-size: 13px;
+}
+.song--title p{
+    color: var(--grey);
+    font-size: 11px;
+}
+.curret-song---icons{
+    display: inline;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.play{
+    grid-area: play;
+    place-self: center;
+    margin-left: 75px;
+}
+.play img{
+    
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.play-button{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.time{
+    grid-area: time;
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-self: center;
+    margin-left: 73px;
+}
+.time span{
+    color: var(--grey);
+    font-size: 10px;
+}
+.time_range {
+    background-color: var(--grey);
+    width: 30px;
+    height: 5px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+.volume{
+    grid-area: volume;
+    place-self: center;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+}
+.volume img{
+    margin-right: 10px;
+}
+.volume input[type=range]{
+    width: 100%;
+}
+/* 
+input[type='range']{
+    appearance: none;
+    outline: none;
+} */
+.slider::-webkit-slider-thumb {
+    /* background: #5a5a5a;
+    appearance: none;
+    border-radius: 20px;
+    height: 7px; */
+    /* -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 60px;
+    background: #000;
+    cursor: pointer;
+    border: 5px solid lawngreen;
+    border-radius: 4px; */
+}
+/* input[type='range']::-webkit-slider-runnable-thumb{
+    background: #c1c1c1;
+    border-radius: 20px;
+    height: 7px; */
+    /* appearance: none; */
+}
+
+
+@media screen and (max-height: 705px) {
+    .play, .time{
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .curret-song---icons{
+        display: grid;
+    }
+   
+}
+
+
+
+  
